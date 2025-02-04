@@ -12,6 +12,7 @@
 #define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
+#include "WwiseUtility.hpp"
 
 static SDL_Window* window = NULL;
 static SDL_Renderer* renderer = NULL;
@@ -22,6 +23,9 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
     /* Create the window */
     if (!SDL_CreateWindowAndRenderer("Hello World", 800, 600, SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
         SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
+
+        InitSoundEngine();
+
         return SDL_APP_FAILURE;
     }
     return SDL_APP_CONTINUE;
