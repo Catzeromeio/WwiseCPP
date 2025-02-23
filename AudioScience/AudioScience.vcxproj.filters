@@ -13,10 +13,66 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\SoundEngine">
+      <UniqueIdentifier>{684aa42f-692d-4223-a64f-51d1b070421b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SoundEngine\Common">
+      <UniqueIdentifier>{5c54c5dd-b534-40e2-816b-91c28912b9b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SoundEngine\Win32">
+      <UniqueIdentifier>{017cf8cd-8e05-49e3-b84d-d10621348662}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="scr\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scr\SoundEngine\Common\AkFileLocationBase.cpp">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\SoundEngine\Common\AkFilePackage.cpp">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\SoundEngine\Common\AkFilePackageLUT.cpp">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\SoundEngine\Common\AkGeneratedSoundBanksResolver.cpp">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\SoundEngine\Common\AkJobWorkerMgr.cpp">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\SoundEngine\Common\AkMultipleFileLocation.cpp">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\SoundEngine\Win32\AkDefaultIOHookDeferred.cpp">
+      <Filter>Source Files\SoundEngine\Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scr\SoundEngine\Common\AkFileLocationBase.h">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\SoundEngine\Common\AkFilePackage.h">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\SoundEngine\Common\AkFilePackageLUT.h">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\SoundEngine\Common\AkGeneratedSoundBanksResolver.h">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\SoundEngine\Common\AkJobWorkerMgr.h">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\SoundEngine\Common\AkMultipleFileLocation.h">
+      <Filter>Source Files\SoundEngine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\SoundEngine\Win32\AkDefaultIOHookDeferred.h">
+      <Filter>Source Files\SoundEngine\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\WwiseUtility.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
