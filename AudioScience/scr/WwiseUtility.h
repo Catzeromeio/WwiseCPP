@@ -30,18 +30,17 @@ AkGameObjectID TargetGameObj = 3;
 void LoadBanks()
 {
 	g_lowLevelIO.SetBasePath(AKTEXT("D:/Projects/WwiseCPP/WwiseProject/GeneratedSoundBanks/Windows/"));
-	g_lowLevelIO.SetBasePath(AKTEXT("D:/Projects/WwiseCPP/WwiseProject/GeneratedSoundBanks/Windows/Event/"));
-	g_lowLevelIO.SetBasePath(AKTEXT("D:/Projects/WwiseCPP/WwiseProject/GeneratedSoundBanks/Windows/Media/"));
 	StreamMgr::SetCurrentLanguage(AKTEXT("English(US)"));
 
-	//ÉèÖÃÌıÕß
+	//è®¾ç½®å¬è€…
 	AkGameObjectID MY_DEFAULT_LISTENER = 0;
-	// ×¢²áÖ÷ÒªÌıÕß¡£
+	// æ³¨å†Œä¸»è¦å¬è€…ã€‚
 	AK::SoundEngine::RegisterGameObj(MY_DEFAULT_LISTENER, "My Default Listener");
-	// ½«Ò»¸öÌıÕßÉèÖÃÎªÄ¬ÈÏ¡£
+	// å°†ä¸€ä¸ªå¬è€…è®¾ç½®ä¸ºé»˜è®¤ã€‚
 	AK::SoundEngine::SetDefaultListeners(&MY_DEFAULT_LISTENER, 1);
 
 
+	//è²Œä¼¼åªèƒ½ä½¿ç”¨è¿™æ ·ä¸€ç§æ–¹å¼è¿›è¡ŒLoad why????å“ªé‡Œé”™äº†
 	AkBankID bankID; // Not used. These banks can be unloaded with their file name.
 	AKRESULT eResult = LoadBank(BANKNAME_INIT, bankID);
 	eResult = LoadBank(BANKNAME_FIRE_USERDEFINE, bankID);
@@ -157,8 +156,13 @@ bool InitSoundEngine()
 
 void Fire()
 {
+	AkPlayingID playingID = PostEvent(AK::EVENTS::FIRE, TargetGameObj);
+	SDL_Log("playing id is : %d", playingID);
+}
+
+void Fire2()
+{
 	AkPlayingID playingID = PostEvent(AK::EVENTS::FIRE2, TargetGameObj);
-	//AkPlayingID playingID = PostEvent(AK::EVENTS::FIRE, TargetGameObj);
 	SDL_Log("playing id is : %d", playingID);
 }
 

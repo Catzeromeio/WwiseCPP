@@ -47,7 +47,11 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
 
 	if (event->type == SDL_EVENT_MOUSE_BUTTON_DOWN)
 	{
-		Fire();
+		if(event->button.button == SDL_BUTTON_LEFT)
+			Fire();
+
+		if(event->button.button == SDL_BUTTON_RIGHT)
+			Fire2();
 	}
 
 	return SDL_APP_CONTINUE;
