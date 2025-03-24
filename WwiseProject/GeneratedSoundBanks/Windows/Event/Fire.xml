@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<SoundBanks>
+		<SoundBank Id="2678880713" Type="Event" GUID="{8720BBD8-16A6-47F3-9728-0A197B0E01E9}" Language="SFX" Hash="{D8124639-F240-C3F0-86D0-0A477F44D423}">
+			<ObjectPath>Fire</ObjectPath>
+			<ShortName>Fire</ShortName>
+			<Path>Event/Fire.bnk</Path>
+			<Media>
+				<File Id="787828398" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Gunshot 1-1.wav</ShortName>
+					<Path>Media/787828398.wem</Path>
+					<CachePath>SFX/Gunshot 1-1_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2678880713" Name="Fire" ObjectPath="\Events\Default Work Unit\Fire" GUID="{8720BBD8-16A6-47F3-9728-0A197B0E01E9}" DurationType="OneShot" DurationMin="1.7836508" DurationMax="1.7836508">
+					<MediaRefs>
+						<MediaRef Id="787828398"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{FEA017FF-D776-62C4-E52A-854C844C1CC3}</FileHash>
+</SoundBanksInfo>

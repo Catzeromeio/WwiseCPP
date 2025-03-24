@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "150",
+  "SoundBanks": [
+   {
+    "Id": "2678880713",
+    "Type": "Event",
+    "GUID": "{8720BBD8-16A6-47F3-9728-0A197B0E01E9}",
+    "Language": "SFX",
+    "Hash": "{D8124639-F240-C3F0-86D0-0A477F44D423}",
+    "ObjectPath": "Fire",
+    "ShortName": "Fire",
+    "Path": "Event/Fire.bnk",
+    "Media": [
+     {
+      "Id": "787828398",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Gunshot 1-1.wav",
+      "Path": "Media/787828398.wem",
+      "CachePath": "SFX/Gunshot 1-1_818F3B66.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2678880713",
+      "Name": "Fire",
+      "ObjectPath": "\\Events\\Default Work Unit\\Fire",
+      "GUID": "{8720BBD8-16A6-47F3-9728-0A197B0E01E9}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.7836508",
+      "DurationMax": "1.7836508",
+      "MediaRefs": [
+       {
+        "Id": "787828398"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{C3F6F76F-A203-A743-104D-6CCE00D269E1}"
+ }
+}

@@ -22,23 +22,34 @@ static SDL_Renderer* renderer = NULL;
 SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
 {
 	/* Create the window */
-	if (!SDL_CreateWindowAndRenderer("Hello World", 800, 600, SDL_WINDOW_RESIZABLE, &window, &renderer)) {
-		SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
-
+	bool bIsWindowCreated = false;
+	bIsWindowCreated = SDL_CreateWindowAndRenderer("Hello World", 800, 600, SDL_WINDOW_RESIZABLE, &window, &renderer);
+	if (bIsWindowCreated)
+	{
 		InitSoundEngine();
-
+	}
+	else
+	{
+		SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
 		return SDL_APP_FAILURE;
 	}
+
 	return SDL_APP_CONTINUE;
 }
 
 /* This function runs when a new event (mouse input, keypresses, etc) occurs. */
 SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
 {
-	if (event->type == SDL_EVENT_KEY_DOWN ||
-		event->type == SDL_EVENT_QUIT) {
+	if (event->type == SDL_EVENT_QUIT)
+	{
 		return SDL_APP_SUCCESS;  /* end the program, reporting success to the OS. */
 	}
+
+	if (event->type == SDL_EVENT_MOUSE_BUTTON_DOWN)
+	{
+		Fire();
+	}
+
 	return SDL_APP_CONTINUE;
 }
 

@@ -15,8 +15,53 @@
 #endif // AK_OPTIMIZED
 
 #include <cassert>
+#include "../../WwiseProject/GeneratedSoundBanks/Wwise_IDs.h"
+
+using namespace AK;
+using namespace AK::SoundEngine;
+
+#define BANKNAME_INIT L"Init.bnk"
+#define BANKNAME_FIRE_USERDEFINE L"FireBank_UserDefine.bnk"
 
 CAkFilePackageLowLevelIODeferred g_lowLevelIO;
+
+AkGameObjectID TargetGameObj = 3;
+
+void LoadBanks()
+{
+	g_lowLevelIO.SetBasePath(AKTEXT("D:/Projects/WwiseCPP/WwiseProject/GeneratedSoundBanks/Windows/"));
+	g_lowLevelIO.SetBasePath(AKTEXT("D:/Projects/WwiseCPP/WwiseProject/GeneratedSoundBanks/Windows/Event/"));
+	g_lowLevelIO.SetBasePath(AKTEXT("D:/Projects/WwiseCPP/WwiseProject/GeneratedSoundBanks/Windows/Media/"));
+	StreamMgr::SetCurrentLanguage(AKTEXT("English(US)"));
+
+	//设置听者
+	AkGameObjectID MY_DEFAULT_LISTENER = 0;
+	// 注册主要听者。
+	AK::SoundEngine::RegisterGameObj(MY_DEFAULT_LISTENER, "My Default Listener");
+	// 将一个听者设置为默认。
+	AK::SoundEngine::SetDefaultListeners(&MY_DEFAULT_LISTENER, 1);
+
+
+	AkBankID bankID; // Not used. These banks can be unloaded with their file name.
+	AKRESULT eResult = LoadBank(BANKNAME_INIT, bankID);
+	eResult = LoadBank(BANKNAME_FIRE_USERDEFINE, bankID);
+
+	eResult = LoadBank(L"Fire.bnk", bankID,AkBankTypeEnum::AkBankType_Event);
+	SDL_Log("load fire bank : %d", eResult);
+
+	AkUniqueID fireID = EVENTS::FIRE;
+	eResult = PrepareEvent(PreparationType::Preparation_Load, &fireID, 1);
+	SDL_Log("prepare fire bank : %d", eResult);
+
+	RegisterGameObj(TargetGameObj);
+}
+
+void Unload()
+{
+	AkUniqueID fireID = EVENTS::FIRE;
+	PrepareEvent(PreparationType::Preparation_Unload, &fireID, 1);
+	PrepareBank(PreparationType::Preparation_Unload, fireID);
+}
 
 bool InitSoundEngine()
 {
@@ -66,6 +111,7 @@ bool InitSoundEngine()
 	AkInitSettings initSettings;
 	AkPlatformInitSettings platformInitSettings;
 	AK::SoundEngine::GetDefaultInitSettings(initSettings);
+	initSettings.bEnableGameSyncPreparation = true;
 	AK::SoundEngine::GetDefaultPlatformInitSettings(platformInitSettings);
 
 	if (AK::SoundEngine::Init(&initSettings, &platformInitSettings) != AK_Success)
@@ -104,7 +150,16 @@ bool InitSoundEngine()
 	}
 #endif // AK_OPTIMIZED
 
+	LoadBanks();
+
 	return true;
+}
+
+void Fire()
+{
+	AkPlayingID playingID = PostEvent(AK::EVENTS::FIRE2, TargetGameObj);
+	//AkPlayingID playingID = PostEvent(AK::EVENTS::FIRE, TargetGameObj);
+	SDL_Log("playing id is : %d", playingID);
 }
 
 void ProcessAudio()
@@ -115,6 +170,8 @@ void ProcessAudio()
 
 void TermSoundEngine()
 {
+	Unload();
+
 #ifndef AK_OPTIMIZED
 	//
 	// Terminate Communication Services

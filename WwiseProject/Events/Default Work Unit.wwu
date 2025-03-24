@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{79166A26-EA7E-4369-8499-C97633161459}" SchemaVersion="119">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{79166A26-EA7E-4369-8499-C97633161459}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{79166A26-EA7E-4369-8499-C97633161459}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Fire" ID="{8720BBD8-16A6-47F3-9728-0A197B0E01E9}">
+					<ChildrenList>
+						<Action Name="" ID="{C3A4D251-DA5A-444F-BAC0-624E9F4FE6F4}" ShortID="90691457">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gunshot 1-1" ID="{AAB9B71D-1E7C-4B40-B238-BD3F351238A9}" WorkUnitID="{27502784-9CED-4F11-831C-0D958F481097}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Fire2" ID="{D4CACD54-5CC3-466A-87B2-C3A881FBDCB4}">
+					<ChildrenList>
+						<Action Name="" ID="{D7A73DE8-3244-4724-8ACE-B84B5F0B3493}" ShortID="50569899">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gunshot 7-1" ID="{22A66683-9F07-451B-8324-9EA8D559B01F}" WorkUnitID="{27502784-9CED-4F11-831C-0D958F481097}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{27502784-9CED-4F11-831C-0D958F481097}" SchemaVersion="119">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{27502784-9CED-4F11-831C-0D958F481097}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{27502784-9CED-4F11-831C-0D958F481097}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Gunshot 1-1" ID="{AAB9B71D-1E7C-4B40-B238-BD3F351238A9}" ShortID="518210872">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{22F61AD7-FAA4-447F-B6F5-47CCFB754038}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D80054C1-DC7E-430F-99F3-34E2A10ABE13}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Gunshot 1-1" ID="{CF787DEF-4D6F-4EDC-9FA4-42260ADD3216}">
+							<Language>SFX</Language>
+							<AudioFile>Gunshot 1-1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="787828398"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Gunshot 1-1" ID="{CF787DEF-4D6F-4EDC-9FA4-42260ADD3216}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Gunshot 7-1" ID="{22A66683-9F07-451B-8324-9EA8D559B01F}" ShortID="1062381808">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{22F61AD7-FAA4-447F-B6F5-47CCFB754038}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D80054C1-DC7E-430F-99F3-34E2A10ABE13}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Gunshot 7-1" ID="{856C1DBA-EA7C-4B8B-AF60-1C1347CFF9A6}">
+							<Language>SFX</Language>
+							<AudioFile>Gunshot 7-1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="115305487"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Gunshot 7-1" ID="{856C1DBA-EA7C-4B8B-AF60-1C1347CFF9A6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

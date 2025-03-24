@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	629389145	Fire2			\Default Work Unit\Fire2	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	115305487	Gunshot 7-1	D:\Projects\WwiseCPP\WwiseProject\.cache\Windows\SFX\Gunshot 7-1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Gunshot 7-1		220596
+
